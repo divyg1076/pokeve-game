@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PokéVerse — Catch Pokémon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-glow glow-one"></div>
+  <div class="page-glow glow-two"></div>
+
+  <main class="app">
+    <nav class="topbar">
+      <a class="brand" href="#">
+        <span class="mini-ball"></span>
+        <span>POKÉVERSE</span>
+      </a>
+
+      <div class="nav-stats">
+        <div><small>TRAINER</small><strong>ASH K.</strong></div>
+        <div class="level"><small>LEVEL</small><strong id="level">01</strong></div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">WILD ENCOUNTER SYSTEM</p>
+        <h1>Catch them.<br><span>Build your squad.</span></h1>
+        <p class="hero-text">Discover Pokémon from different elemental types and add them to your Pokédex.</p>
+      </div>
+
+      <div class="score-panel">
+        <div class="score-icon">✦</div>
+        <div>
+          <small>TRAINER POINTS</small>
+          <strong id="score">0000</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="type-section">
+      <div class="section-title">
+        <h2>Explore by type</h2>
+        <span id="pokemonCount">12 Pokémon found</span>
+      </div>
+
+      <div class="type-filters" id="typeFilters"></div>
+    </section>
+
+    <section class="encounter-layout">
+      <article class="encounter-card" id="encounterCard">
+        <div class="card-top">
+          <span class="live-dot"></span>
+          <span>LIVE ENCOUNTER</span>
+          <button class="refresh-btn" id="newPokemonBtn" title="Find another Pokémon">↻</button>
+        </div>
+
+        <div class="pokemon-stage" id="pokemonStage">
+          <div class="circle-one"></div>
+          <div class="circle-two"></div>
+          <img id="pokemonImage" src="" alt="Wild Pokémon" />
+          <span class="pokemon-number" id="pokemonNumber">#0025</span>
+        </div>
+
+        <div class="pokemon-details">
+          <div>
+            <p class="pokemon-label">WILD POKÉMON</p>
+            <h2 id="pokemonName">Pikachu</h2>
+            <div class="badges" id="typeBadges"></div>
+          </div>
+          <div class="catch-rate">
+            <span>CAPTURE RATE</span>
+            <strong id="catchRate">72%</strong>
+          </div>
+        </div>
+
+        <div class="catch-progress">
+          <div class="progress-label">
+            <span>Capture probability</span>
+            <span id="rateText">72%</span>
+          </div>
+          <div class="progress-track">
+            <div id="progressFill"></div>
+          </div>
+        </div>
+
+        <button class="catch-button" id="catchBtn">
+          <span class="button-ball"></span>
+          <span>THROW POKÉ BALL</span>
+          <kbd>SPACE</kbd>
+        </button>
+
+        <p class="game-message" id="message">A wild Pikachu appeared nearby!</p>
+      </article>
+
+      <aside class="pokedex-panel">
+        <div class="pokedex-heading">
+          <div>
+            <p class="eyebrow">YOUR PROGRESS</p>
+            <h2>Pokédex</h2>
+          </div>
+          <strong><span id="caughtCount">0</span>/<span id="totalCount">12</span></strong>
+        </div>
+
+        <div class="dex-bar">
+          <div id="dexProgress"></div>
+        </div>
+
+        <div class="collection" id="collection"></div>
+
+        <div class="inventory">
+          <div class="bag-icon">🎒</div>
+          <div>
+            <span>POKÉ BALLS</span>
+            <strong><span id="balls">8</span> remaining</strong>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
